@@ -11,9 +11,7 @@ sudo apt-get install -y unzip jq node
 echo "Downloading serf"
 wget https://dl.bintray.com/mitchellh/serf/0.6.4_linux_amd64.zip
 unzip 0.6.4_linux_amd64.zip
-
-echo "Starting serf"
-./serf agent -node roshi &
+rm 0.6.4_linux_amd64.zip
 
 echo "Downloading consul"
 sudo docker pull progrium/consul
@@ -23,6 +21,8 @@ curl https://install.meteor.com/ | sh
 
 echo "Installing mcli tools"
 curl https://raw.githubusercontent.com/practicalmeteor/meteor-mcli/master/bin/install-mcli.sh | bash
+
+sudo apt-get upgrade -y
 
 echo "Configuring cli tools"
 mkdir -p /vagrant/monk/.meteor/local
@@ -37,8 +37,11 @@ cd /vagrant/monk-opsweb
 meteor &
 cd /vagrant
 
+#todo: Set mongo host correctly
 echo "Linking serf to web interface"
 
-./serf agent -node listener -event-handler /vagrant/serf-handler.sh -join
+./serf agent -node listener -event-handler /vagrant/serf-handler.sh &
 
-sudo apt-get upgrade -y
+echo
+echo
+echo "Visit site at http://localhost:3000"
