@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "member-join.js",
+  "sourceRoot": "..\\server",
+  "sources": [
+    "member-join.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,EAAA,GAAG,CAAC,eAAJ,CAAqB,aAArB,EAAmC,SAAC,OAAD,GAAA;AAC/B,IAAA,OAAO,CAAC,KAAR,CAAe,8CAAf,CAAA,CAAA;WACA,OAAO,CAAC,IAAR,CAAc,6CAAd,EAF+B;EAAA,CAAnC,CAAA,CAAA;AAAA"
+}
